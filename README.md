@@ -2,7 +2,9 @@
 ## In Tensorflow
 Implementation of Spatial Softmax and Soft Argmax techniques used for keypoint localization using a Convolution Neural Network (CNN)
 
-
+### Example
+####  Testing Soft ArgMax layer
+This layer has zero trainable parameter
 ```ruby
 import numpy as np
 
