@@ -29,7 +29,7 @@ if __name__=='__main__':
     W = 25
     K = 3  # No. of keypoints
     
-    model = test_model(shape = (H,W,K))
+    model = test_model(shape = (H,W,K), n_keys = K)
    
     data = np.zeros((H,W,K), dtype = np.float32)
     gt = []
