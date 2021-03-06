@@ -30,7 +30,11 @@ if __name__=='__main__':
     K = 3  # No. of keypoints
     
     model = test_model(shape = (H,W,K), n_keys = K)
-   
+    '''
+    Create a dummy variable (called data), Only one pixel location in each channel of 
+    data (i.e., K) has value equal to 1. Rest of the pixel values are zero.
+    This is two create an softmax like representation of data.
+    '''
     data = np.zeros((H,W,K), dtype = np.float32)
     gt = []
 
@@ -41,9 +45,12 @@ if __name__=='__main__':
         data[x,y,c] = 1.
         gt.append([x,y])
         
+    # Ground truth keypoints coordinates    
     gt = np.array(gt)
     
     data  = np.expand_dims(data, axis=0)
+    
+    # The predicted keypoints coordinates
     pred  = model.predict(data)[0]
 
 ```
